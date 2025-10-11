@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Server Control Panel</title>
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <script src="./jquery-3.7.1.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f6f8;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .form input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      flex: 1;
+    }
+
+    .form button {
+      padding: 10px 16px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .form button:hover {
+      background: #43a047;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background: #1976d2;
+      color: white;
+    }
+
+    tr:hover {
+      background: #f1f1f1;
+    }
+
+    .btn {
+      padding: 6px 12px;
+      margin: 2px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .btn-start { background: #4CAF50; color: white; }
+    .btn-start:hover { background: #43a047; }
+
+    .btn-stop { background: #f44336; color: white; }
+    .btn-stop:hover { background: #e53935; }
+
+    .btn-edit { background: #ff9800; color: white; }
+    .btn-edit:hover { background: #fb8c00; }
+
+    .btn-delete { background: #292929; color: white; }
+    .btn-delete:hover { background: #292929; }
+
+    .btn-edit2 { background: #c0c0c0; color: #000000; }
+    .btn-delete2 { background: #c0c0c0; color: #000000; }
+    .inpStyle {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #333;
+      background: #f9f9f9;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .inpStyle:focus {
+      border-color: #1976d2;
+      box-shadow: 0 0 6px rgba(25, 118, 210, 0.4);
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Server Control Panel</h1>
+
+  <div class="form">
+    <input type="hidden" id="id">
+    <input type="text" id="path" placeholder="Path: C:\Users\username\path\project\main.file">
+    <input type="text" id="command" placeholder="Command: npm start or npm run dev">
+    <button id="addBtn">Save</button>
+  </div>
+  <p class="errmsg"></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Path</th>
+        <th>Command</th>
+        <th>Status</th>
+        <th>Start / Stop</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="serverTable"></tbody>
+  </table>
+  <script src="./render.js"></script>
+</body>
+</html>

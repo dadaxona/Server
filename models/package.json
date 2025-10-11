@@ -1,0 +1,59 @@
+{
+  "name": "idface",
+  "version": "1.0.0",
+  "description": "Electron loyihasi (Windows)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "dev": "nodemon --exec electron .",
+    "make": "electron-forge make",
+    "build": "electron-builder --win nsis"
+  },
+  "keywords": [],
+  "author": "Abdul",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.9.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.9.0",
+    "@electron-forge/plugin-fuses": "^7.9.0",
+    "@electron/fuses": "^1.8.0",
+    "electron": "^38.2.1",
+    "electron-builder": "^26.0.12",
+    "nodemon": "^3.1.10",
+    "sequelize-cli": "^6.6.3"
+  },
+  "dependencies": {
+    "@emnapi/runtime": "^1.5.0",
+    "axios": "^1.12.2",
+    "base-64": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^5.1.0",
+    "form-data": "^4.0.4",
+    "jimp": "^0.22.8",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "mysql2": "^3.15.1",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7",
+    "uuid": "^13.0.0",
+    "xml2js": "^0.6.2"
+  },
+ "build": {
+    "asar": false,
+    "win": {
+      "icon": "id.png",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "ID Face",
+      "license": "license.md"
+    }
+  }
+}

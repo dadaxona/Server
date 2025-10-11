@@ -1,0 +1,44 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Dadaxon",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^38.2.2",
+    "electron-builder": "^26.0.12",
+    "sequelize-cli": "^6.6.3"
+  },
+  "dependencies": {
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7",
+    "tree-kill": "^1.2.2"
+  },
+  "build": {
+    "appId": "Server.Control.Panel",
+    "productName": "Server Control Panel",
+    "icon": "icon.ico",
+    "asar": false,
+    "win": {
+      "icon": "icon.ico",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Server Control Panel",
+      "license": "license.md"
+    }
+  }
+}
