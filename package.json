@@ -21,8 +21,8 @@
     "tree-kill": "^1.2.2"
   },
   "build": {
-    "appId": "Server.Control.Panel",
-    "productName": "Server Control Panel",
+    "appId": "S.C.P",
+    "productName": "S.C.P",
     "icon": "icon.ico",
     "asar": false,
     "win": {
@@ -37,7 +37,7 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "Server Control Panel",
+      "shortcutName": "S.C.P",
       "license": "license.md"
     }
   }

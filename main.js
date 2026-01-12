@@ -18,7 +18,7 @@ function createWindow() {
       nodeIntegration: false
     }
   });
-  Menu.setApplicationMenu(null)
+  // Menu.setApplicationMenu(null)
   win.loadFile(path.join(__dirname, "index.html"));
 }
 
